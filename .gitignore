@@ -1,0 +1,10 @@
+# Ignore arquivos do Anaconda
+*.conda
+*.ipynb_checkpoints/
+*.pyc
+__pycache__/
+.DS_Store
+meu_banco.db
+
+# Ignore dependências
+env/
