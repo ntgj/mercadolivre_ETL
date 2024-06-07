@@ -5,7 +5,7 @@ Este projeto realiza a extração, transformação e visualização de dados do 
 ## Instalação
 
 - Clone o repositório:
-   git clone https://github.com/seu_usuario/mercadolivre_ETL.git
+   git clone https://github.com/ntgj/mercadolivre_ETL.git
    cd mercadolivre_ETL
 
     Crie e ative um ambiente virtual:
