@@ -2,6 +2,7 @@
 
 Este projeto realiza a extração, transformação e visualização de dados do Mercado Livre. Utilizamos Python, SQLite e Streamlit para construir uma pipeline ETL e um dashboard interativo.
 
+Este projeto está limitado a 1000 resultados por pesquisa, limite de usuário público da API do Mercado Livre, porém,  pode-se facilmente implementar a utilização de um token para aumentar este limite.
 ## Instalação
 
 - Clone o repositório:
