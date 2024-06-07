@@ -4,26 +4,26 @@ import sqlite3
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Conectar ao banco de dados SQLite
+# Conecta ao banco de dados SQLite
 db_dir = 'database/base.db'
 conn = sqlite3.connect(db_dir)
 
-# Definir a consulta SQL para buscar todos os dados da tabela 'produtos_transformados'
+# Define a consulta SQL para buscar todos os dados da tabela 'produtos_transformados'
 query = "SELECT * FROM produtos_transformados"
 
-# Executar a consulta e carregar os dados em um DataFrame do Pandas
+# Executa a consulta e carrega os dados em um dataframe
 df = pd.read_sql_query(query, conn)
 
-# Fechar a conexão com o banco de dados
+# Fecha a conexão com o banco de dados
 conn.close()
 
-# Configurar a aplicação Streamlit
+# Configuração Streamlit
 st.title('Visualização de Dados do Mercado Livre')
 
 # Descrição do dashboard
 st.write("""
-    Este dashboard exibe dados de produtos do Mercado Livre, incluindo preço, condição, tipo de listagem,
-    modo de compra e outras informações relevantes.
+    Este dashboard exibe dados de produtos do Mercado Livre, incluindo preço, condição, tipo de listagem e
+    modo de compra.
 """)
 
 # Tabela de dados
@@ -50,11 +50,10 @@ if domain_id:
     df_filtered = df_filtered[df_filtered['domain_id'].isin(domain_id)]
 df_filtered = df_filtered[df_filtered['accepts_mercadopago'] == accepts_mercadopago]
 
-# Sumários Estatísticos
+# Informações dos resultados
 st.subheader('Distribuição de Preços, Estoque e Mercado Pago')
 st.write(df_filtered.describe())
 
-# Gráficos
 # Gráfico de Barras da Condição do Produto
 st.subheader('Gráfico de Barras da Condição do Produto')
 fig_condition, ax_condition = plt.subplots()

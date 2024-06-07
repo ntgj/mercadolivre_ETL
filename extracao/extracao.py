@@ -8,13 +8,13 @@ db_dir = 'database/base.db'
 conn = sqlite3.connect(db_dir)
 c = conn.cursor()
 
-# Define a base URL da API do Mercado Livre
+# URL da API do Mercado Livre
 search_url = 'https://api.mercadolibre.com/sites/MLB/search?q='
 
-# Solicita ao usuário que insira a pesquisa
+# Input para a pesquisa
 search = input("Insira aqui a sua pesquisa: ")
 
-# Codifica a pesquisa para garantir que a URL esteja correta
+# Formata o input 
 search_encoded = requests.utils.quote(search)
 
 # Inicializa a página e a lista que irá armazenar os resultados
